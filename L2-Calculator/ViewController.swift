@@ -118,6 +118,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.05, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }) { _ in
+            UIView.animate(withDuration: 0.05, animations: {
+                sender.transform = CGAffineTransform.identity
+            })
+        }
+        
         switch sender.tag {
         case 11:    // Clear
             currentNumberStr = ""
